@@ -1,0 +1,140 @@
+# SETTINGS
+set $mod Mod4
+for_window [class=".*"] border pixel 2
+gaps inner 20
+gaps outer 0
+smart_gaps on
+smart_borders on
+#font xft:URWGothic-Book 10
+#hide_edge_borders both
+floating_modifier $mod
+focus_follows_mouse no
+
+# COLORS
+set $border_f     "#ebbb00"
+set $background_f "#dddddd"
+set $text_f       "#000000"
+set $indicator_f  "#dddddd"
+set $border_i     "#7f6500"
+set $background_i "#808080"
+set $text_i       "#000000"
+set $indicator_i  "#ffffff"
+set $border_u     "#ebbb00"
+set $background_u "#a0a0a0"
+set $text_u       "#000000"
+set $indicator_u  "#ffffff"
+client.focused          $border_f $background_f $text_f $indicator_f
+client.unfocused        $border_i $background_i $text_i $indicator_i
+client.focused_inactive $border_i $background_i $text_i $indicator_i
+client.urgent           $border_u $background_u $text_u $indicator_u
+
+# KEYBINDS
+bindsym $mod+Return exec konsole
+bindsym $mod+q kill
+bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+Shift+c reload
+bindsym $mod+l exec --no-startup-id blurlock
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+Ctrl+m exec pavucontrol
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left 40
+bindsym $mod+Shift+Down move down 40
+bindsym $mod+Shift+Up move up 40
+bindsym $mod+Shift+Right move right 40
+
+bindsym $mod+Ctrl+Left resize shrink width 40 px
+bindsym $mod+Ctrl+Down resize grow height 40 px
+bindsym $mod+Ctrl+Up resize shrink height 40 px
+bindsym $mod+Ctrl+Right resize grow width 40 px
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# VOLUME, BRIGHTNESS, TOUCHPAD
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
+#bindsym XF86TouchpadToggle exec /scripts/touchpad_switch.sh off
+bindsym $mod+Shift+t  exec /scripts/touchpad_switch.sh off
+bindsym $mod+t  exec /scripts/touchpad_switch.sh on
+
+# WORKSPACES
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+
+# OPEN FLOATING
+for_window [class="calamares"] floating enable border pixel 2
+for_window [class="Clipgrab"] floating enable border pixel 2
+for_window [title="File Transfer*"] floating enable border pixel 2
+for_window [class="Lightdm-settings"] floating enable border pixel 2
+for_window [class="Manjaro Settings Manager"] floating enable border pixel 2
+for_window [title="MuseScore: Play Panel"] floating enable border pixel 2
+for_window [class="octopi"] floating enable border pixel 2
+for_window [title="About Pale Moon"] floating enable border pixel 2
+for_window [class="Pamac-manager"] floating enable border pixel 2
+for_window [class="Pavucontrol"] floating enable border pixel 2
+for_window [class="Simple-scan"] floating enable border pixel 2
+for_window [class="(?i)System-config-printer.py"] floating enable border pixel 2
+for_window [class="Timeset-gui"] floating enable border pixel 2
+for_window [class="(?i)virtualbox"] floating enable border pixel 2
+for_window [class="Xfburn"] floating enable border pixel 2
+for_window [class="Unity Hub*"] floating enable border pixel 2
+
+for_window [class="Lxappearance"] floating enable sticky enable border pixel 2
+for_window [class="Nitrogen"] floating enable sticky enable border pixel 2
+for_window [class="qt5ct"] floating enable sticky enable border pixel 2
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border pixel 2
+
+for_window [class="Oblogout"] fullscreen enable
+
+# AUTORUN
+exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id fix_xcursor
+exec_always --no-startup-id killall compton; compton -b
+exec_always --no-startup-id killall polybar; polybar basic
+exec_always --no-startup-id feh --bg-fill Pictures/wallpapers/planets_yellow.jpg
+
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id nitrogen --restore
+exec --no-startup-id pulseaudio
+#exec --no-startup-id xfce4-power-manager
+exec --no-startup-id clipit
+exec --no-startup-id volumeicon
+#exec --no-startup-id sh /scripts/blurme &
+exec --no-startup-id sh ~/.screenlayout/basic_standalone.sh
+exec --no-startup-id sleep 1; pa-applet
+exec --no-startup-id sleep 1; nm-applet
