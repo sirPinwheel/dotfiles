@@ -1,0 +1,64 @@
+!---------!
+! GENERAL !
+!---------!
+
+URxvt.font:             xft:monospace:size=10, FontAwesome:size=10
+URxvt.scrollBar:        false
+URxvt.letterSpace:      -1
+URxvt.lineSpace:        0
+URxvt*termName:         xterm-256color
+URxvt.keysym.Home:      \033[1~
+URxvt.keysym.End:       \033[4~
+URxvt.keysym.KP_Home:   \033[1~
+URxvt.keysym.KP_End:    \033[4~
+URxvt*depth:            32
+URxvt*background:	[70]#000000
+URxvt.geometry:	        86x28
+URxvt.internalBorder:   10
+URxvt.cursorBlink:      false
+!Urxvt.blurRadius:      5
+Xcursor.size:           16
+
+!------!
+! PERL !
+!------!
+
+URxvt.perl-ext-common: selection-to-clipboard
+
+
+! special
+*.foreground:   #c0b18b
+*.background:   #1f1f1f
+*.cursorColor:  #c0b18b
+
+! black
+*.color0:       #4a3637
+*.color8:       #4a3637
+
+! red
+*.color1:       #d17b49
+*.color9:       #d17b49
+
+! green
+*.color2:       #7b8748
+*.color10:      #7b8748
+
+! yellow
+*.color3:       #af865a
+*.color11:      #af865a
+
+! blue
+*.color4:       #535c5c
+*.color12:      #535c5c
+
+! magenta
+*.color5:       #775759
+*.color13:      #775759
+
+! cyan
+*.color6:       #6d715e
+*.color14:      #6d715e
+
+! white
+*.color7:       #c0b18b
+*.color15:      #c0b18b
