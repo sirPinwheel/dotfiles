@@ -66,9 +66,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
-#bindsym XF86TouchpadToggle exec /scripts/touchpad_switch.sh off
-bindsym $mod+Shift+t  exec /scripts/touchpad_switch.sh off
-bindsym $mod+t  exec /scripts/touchpad_switch.sh on
+#bindsym XF86TouchpadToggle exec --no-startup-id /scripts/touchpad_switch.sh off
+bindsym $mod+Shift+t  exec --no-startup-id /scripts/touchpad_switch.sh off
+bindsym $mod+t  exec --no-startup-id /scripts/touchpad_switch.sh on
 
 # WORKSPACES
 set $ws1 "1"
