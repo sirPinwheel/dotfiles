@@ -1,7 +1,7 @@
 # SETTINGS
 set $mod Mod4
 for_window [class=".*"] border pixel 2
-gaps inner 20
+gaps inner 10
 gaps outer 0
 smart_gaps on
 smart_borders on
@@ -113,6 +113,7 @@ for_window [class="Timeset-gui"] floating enable border pixel 2
 for_window [class="(?i)virtualbox"] floating enable border pixel 2
 for_window [class="Xfburn"] floating enable border pixel 2
 for_window [class="Unity Hub*"] floating enable border pixel 2
+for_window [title="*alsa-tray*"] floating enable border pixel 2 #TODO
 
 for_window [class="Lxappearance"] floating enable sticky enable border pixel 2
 for_window [class="Nitrogen"] floating enable sticky enable border pixel 2
@@ -121,20 +122,22 @@ for_window [class="Qtconfig-qt4"] floating enable sticky enable border pixel 2
 
 for_window [class="Oblogout"] fullscreen enable
 
+
 # AUTORUN
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id killall compton; compton -b
 exec_always --no-startup-id killall polybar; polybar basic
-exec_always --no-startup-id feh --bg-fill Pictures/wallpapers/planets_yellow.jpg
+exec_always --no-startup-id feh --bg-fill Pictures/wallpapers/bright_hex.png
 
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id nitrogen --restore
 exec --no-startup-id pulseaudio
 #exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
-exec --no-startup-id volumeicon
+exec --no-startup-id alsa-tray
 #exec --no-startup-id sh /scripts/blurme &
 exec --no-startup-id sh ~/.screenlayout/basic_standalone.sh
 exec --no-startup-id sleep 1; pa-applet
 exec --no-startup-id sleep 1; nm-applet
+exec_always --no-startup-id /scripts/i3_alternate.py
