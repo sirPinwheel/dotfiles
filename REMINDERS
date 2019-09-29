@@ -1,7 +1,7 @@
 USEFUL SOFTWARE
 -------------------------------------------
 grub-customizer      - grub settings
-lxappearance         - gtk themeing
+lxappearance         - gtk theming
 alsa-tray            - tray volume icon
 xwininfo             - window info
 xfce4-screenshooter  - screenshot
@@ -9,3 +9,15 @@ feh                  - wallpaper
 nitrogen             - wallpaper
 scrot                - screenshot
 wicd                 - networking
+pcmanfm              - file manager
+firefox              - browser
+polybar              - taskbar
+openbox              - desktop environment
+i3-gaps (git)        - window manager
+compton              - compositor
+htop                 - task manager
+visual studio code   - text editor
+urxvt / konsole      - terminal emulator
+rofi                 - application launcher
+sxhkd                - hothey daemon
+bleachbit            - maintenance

@@ -1,4 +1,4 @@
-### BASHRC by Pinwheel [1.09.2019] ###
+### BASHRC by Pinwheel [29.09.2019] ###
 
 [[ $- != *i* ]] && return
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
@@ -115,6 +115,7 @@ alias docs='cd ~/Documents/'
 alias proj='cd ~/Projects/'
 alias mounted='cd /run/media/pin/;ll'
 alias eread='setsid foliate 1> /dev/null 2> /dev/null'
+alias nano='nano -T 4'
 
 # SETTINGS
 HISTCONTROL=ignoreboth
@@ -124,3 +125,6 @@ shopt -s autocd
 shopt -s histappend
 shopt -s checkwinsize
 shopt -s expand_aliases
+
+# AUTORUN
+ufetch
