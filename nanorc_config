@@ -15,6 +15,6 @@ include "/usr/share/nano/*.nanorc"
 set linenumbers
 set smarthome
 set zap
-set nohelp
+#set nohelp
 set softwrap
-set mouse
+#set mouse
