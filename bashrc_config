@@ -125,6 +125,8 @@ shopt -s autocd
 shopt -s histappend
 shopt -s checkwinsize
 shopt -s expand_aliases
+shopt -s checkwinsize
 
 # AUTORUN
 ufetch
+export p="/home/pin/Projects"
