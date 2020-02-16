@@ -21,3 +21,4 @@ urxvt / konsole      - terminal emulator
 rofi                 - application launcher
 sxhkd                - hothey daemon
 bleachbit            - maintenance
+pyenv                - python/venv manager

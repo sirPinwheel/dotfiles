@@ -120,6 +120,8 @@ alias date='date +"%d-%m-%Y"'
 alias wget='wget -c'
 alias ports='netstat -tulanp'
 alias services='service --status-all'
+alias ctl='systemctl'
+alias update-repos='sudo pacman -Syu;yay'
 
 # SETTINGS
 HISTCONTROL=ignoreboth
